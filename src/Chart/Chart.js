@@ -1,41 +1,73 @@
-import React from 'react';
-import {Bar} from 'react-chartjs-2';
+// import React from 'react'
+// import { Chart } from 'react-charts'
+ 
+// function MyChart() {
+//   const data = React.useMemo(
+//     () => [
+//       {
+//         label: 'Series 1',
+//         data: [[0, 1], [1, 2], [2, 4], [3, 2], [4, 7]]
+//       },
+//       {
+//         label: 'Series 2',
+//         data: [[0, 3], [1, 1], [2, 5], [3, 6], [4, 4]]
+//       }
+//     ],
+//     []
+//   )
+ 
+//   const axes = React.useMemo(
+//     () => [
+//       { primary: true, type: 'linear', position: 'bottom' },
+//       { type: 'linear', position: 'left' }
+//     ],
+//     []
+//   )
+ 
+// //   const lineChart = (
+// //     // A react-chart hyper-responsively and continuously fills the available
+// //     // space of its parent element automatically
+// //     <div
+// //       style={{
+// //         width: '400px',
+// //         height: '300px'
+// //       }}
+// //     >
+// return(
+//       <Chart data={data} axes={axes} />
+// //     </div>
+// )
+// //   )
+// }
 
-const state = {
-  labels: ['January', 'February', 'March',
-           'April', 'May'],
+// export default MyChart
+
+import React from "react";
+import { Bar } from "react-chartjs-2";
+
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
   datasets: [
     {
-      label: 'Rainfall',
-      backgroundColor: 'rgba(75,192,192,1)',
-      borderColor: 'rgba(0,0,0,1)',
-      borderWidth: 2,
-      data: [65, 59, 80, 81, 56]
+      label: "First dataset",
+      data: [33, 53, 85, 41, 44, 65],
+      fill: true,
+      backgroundColor: "rgba(75,192,192,0.2)",
+      borderColor: "rgba(75,192,192,1)"
+    },
+    {
+      label: "Second dataset",
+      data: [33, 25, 35, 51, 54, 76],
+      fill: false,
+      borderColor: "#742774"
     }
   ]
-}
+};
 
-class Chart extends React.Component {
-  render() {
-    return (
-      <div>
-        <Bar
-          data={state}
-          options={{
-            title:{
-              display:true,
-              text:'Average Rainfall per month',
-              fontSize:20
-            },
-            legend:{
-              display:true,
-              position:'right'
-            }
-          }}
-        />
-      </div>
-    );
-  }
+export default function MyChart() {
+  return (
+    <div className="App">
+      <Bar data={data} />
+    </div>
+  );
 }
-
-export default Chart

@@ -1,15 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react'
-// import { Chart } from './Chart/Chart'
+import MyChart from './Chart/Chart'
+
 
 function App() {
   const [data, setData] = useState([])
   const [showData, setShowData] = useState(false)
 
-  const totalTransctions = function(array) {
-    return array.length;
-  }
+
 
   const handleClick = (event)=> {
     console.log("click")
@@ -19,6 +18,8 @@ function App() {
     .then(setShowData(true))
   }
 
+  console.log(data)
+
   function countTransactions(data) {
     return data.length
   }
@@ -27,9 +28,11 @@ function App() {
     return Math.floor(data.length/2)
   }
 
+ 
  const totalTransactions = countTransactions(data)
  const medianTransaction = median(data)
  const largestTransaction = maxTransaction(data)
+ const maxInvestor = findInvestor(data, largestTransaction) 
  const sortedTransactions = sortedData(data)
  const sumTransactions = sum(data)
  const averageTransaction = sum(data) / countTransactions(data)
@@ -46,8 +49,6 @@ function App() {
     return transaction.shares
   })
   return Math.max(...allShares)
-  // allShares.sort((a,b) => a+b)
-  // return allShares[0]
 }
 
  function sum(data) {
@@ -61,12 +62,17 @@ function App() {
   return total
 }
 
-  const mappedData = data.map((transaction) => (
-    <li>Delegator address: {transaction.delegator_address} has {transaction.shares} shares</li>
-  ))
+function findInvestor(data, amount) {
+  console.log("We are here")
+  for (let i=0; i< data.length; i++) {
+    if (data[i].shares == amount) {
+      return data[i].delegator_address
+    }
+  }  
+}
 
   const mappedSortedData = sortedTransactions.map((transaction)=> (
-    <li>{transaction}</li>
+    <div>{transaction}</div>
   ))
  
 
@@ -80,10 +86,10 @@ function App() {
         <div>The median value is {mappedSortedData[medianTransaction]}</div>
         <div>The sum of all transactions is {sumTransactions}</div>
         <div>The average of all transactions is {averageTransaction}</div>
-        <div>The maximum transaction is {largestTransaction}</div>
+        <div>The maximum transaction is {largestTransaction} made by {maxInvestor}</div>
       </div>
       : null}
-      {/* <Chart /> */}
+      <MyChart />
     </div>
   );
 }
