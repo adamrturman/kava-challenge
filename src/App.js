@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import React, {useState} from 'react'
+// import { Chart } from './Chart/Chart'
 
 function App() {
   const [data, setData] = useState([])
@@ -28,6 +29,7 @@ function App() {
 
  const totalTransactions = countTransactions(data)
  const medianTransaction = median(data)
+ const largestTransaction = maxTransaction(data)
  const sortedTransactions = sortedData(data)
  const sumTransactions = sum(data)
  const averageTransaction = sum(data) / countTransactions(data)
@@ -38,6 +40,15 @@ function App() {
    })
    return allShares.sort((a,b) => a-b)
  }
+
+ function maxTransaction(data){
+  const allShares = data.map((transaction)=> {
+    return transaction.shares
+  })
+  return Math.max(...allShares)
+  // allShares.sort((a,b) => a+b)
+  // return allShares[0]
+}
 
  function sum(data) {
   const allAmounts = data.map((transaction)=> {
@@ -69,8 +80,10 @@ function App() {
         <div>The median value is {mappedSortedData[medianTransaction]}</div>
         <div>The sum of all transactions is {sumTransactions}</div>
         <div>The average of all transactions is {averageTransaction}</div>
+        <div>The maximum transaction is {largestTransaction}</div>
       </div>
       : null}
+      {/* <Chart /> */}
     </div>
   );
 }
