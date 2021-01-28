@@ -17,13 +17,16 @@ function App() {
     .then((data)=> setData(data.app_state.staking.delegations))
   }
 
-  console.log("Total transactions", data.length)
-
   function sum(data) {
     return data.length
   }
 
+  function median(data) {
+    return Math.floor(data.length/2)
+  }
+
  const totalTransactions = sum(data)
+ const medianTransaction = median(data)
 
   const mappedData = data.map((transaction) => (
     <li>Delegator address: {transaction.delegator_address} has {transaction.shares} shares</li>
@@ -34,6 +37,7 @@ function App() {
     <div className="App">
       <button onClick={handleClick}>Hello</button>
       <div>There are {totalTransactions} transactions</div>
+      <div>The median transaction is the index {medianTransaction}</div>
       <div>{mappedData}</div>
     </div>
   );
