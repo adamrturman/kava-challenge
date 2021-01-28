@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 function App() {
   const [data, setData] = useState([])
-  const [total, setTotal] = useState(0)
+  const [showData, setShowData] = useState(false)
 
   const totalTransctions = function(array) {
     return array.length;
@@ -15,9 +15,10 @@ function App() {
     fetch("https://ipfs.io/ipfs/QmbZiEejjAmdEmtF71WLPuY3dwkeMPCmcVxaj7N8aH56Zw/kava-4-export-20210122.json")
     .then((response) => response.json())
     .then((data)=> setData(data.app_state.staking.delegations))
+    .then(setShowData(true))
   }
 
-  function sum(data) {
+  function countTransactions(data) {
     return data.length
   }
 
@@ -25,10 +26,11 @@ function App() {
     return Math.floor(data.length/2)
   }
 
- const totalTransactions = sum(data)
+ const totalTransactions = countTransactions(data)
  const medianTransaction = median(data)
  const sortedTransactions = sortedData(data)
  const sumTransactions = sum(data)
+ const averageTransaction = sum(data) / countTransactions(data)
 
  function sortedData(data){
    const allShares = data.map((transaction)=> {
@@ -60,12 +62,15 @@ function App() {
   return (
     <div className="App">
       <button onClick={handleClick}>Hello</button>
-      <div>There are {totalTransactions} total transactions</div>
-      <div>The median transaction is the index {medianTransaction}</div>
-      <div>The median value is {mappedSortedData[medianTransaction]}</div>
-      <div>The sum of all transactions is {sumTransactions}</div>
-      {/* <div>Sorted Transactions: {mappedSortedData}</div> */}
-      {/* <div>{mappedData}</div> */}
+      {showData ?
+      <div>
+        <div>There are {totalTransactions} total transactions</div>
+        <div>The median transaction is the index {medianTransaction}</div>
+        <div>The median value is {mappedSortedData[medianTransaction]}</div>
+        <div>The sum of all transactions is {sumTransactions}</div>
+        <div>The average of all transactions is {averageTransaction}</div>
+      </div>
+      : null}
     </div>
   );
 }
