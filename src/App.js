@@ -4,25 +4,37 @@ import React, {useState, useEffect} from 'react'
 
 function App() {
   const [data, setData] = useState([])
+  const [total, setTotal] = useState(0)
+
+  const totalTransctions = function(array) {
+    return array.length;
+  }
 
   const handleClick = (event)=> {
     console.log("click")
     fetch("https://ipfs.io/ipfs/QmbZiEejjAmdEmtF71WLPuY3dwkeMPCmcVxaj7N8aH56Zw/kava-4-export-20210122.json")
     .then((response) => response.json())
-    .then((data)=> setData(data.validators))
+    .then((data)=> setData(data.app_state.staking.delegations))
   }
 
-  console.log(data)
-  // console.log(typeof data)
+  console.log("Total transactions", data.length)
+
+  function sum(data) {
+    return data.length
+  }
+
+ const totalTransactions = sum(data)
 
   const mappedData = data.map((transaction) => (
-    <li>{transaction.name}</li>
+    <li>Delegator address: {transaction.delegator_address} has {transaction.shares} shares</li>
   ))
+ 
 
   return (
     <div className="App">
       <button onClick={handleClick}>Hello</button>
-      {mappedData}
+      <div>There are {totalTransactions} transactions</div>
+      <div>{mappedData}</div>
     </div>
   );
 }
