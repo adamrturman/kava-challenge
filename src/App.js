@@ -71,6 +71,14 @@ function findInvestor(data, amount) {
   }  
 }
 
+const addresses = data.map((transaction) => {
+  return transaction.delegator_address
+})
+
+const amounts = data.map((transaction) => {
+  return transaction.shares
+})
+
   const mappedSortedData = sortedTransactions.map((transaction)=> (
     <div>{transaction}</div>
   ))
@@ -87,9 +95,9 @@ function findInvestor(data, amount) {
         <div>The sum of all transactions is {sumTransactions}</div>
         <div>The average of all transactions is {averageTransaction}</div>
         <div>The maximum transaction is {largestTransaction} made by {maxInvestor}</div>
+        <MyChart addresses={addresses} amounts={amounts}/>
       </div>
       : null}
-      <MyChart />
     </div>
   );
 }
