@@ -27,18 +27,45 @@ function App() {
 
  const totalTransactions = sum(data)
  const medianTransaction = median(data)
+ const sortedTransactions = sortedData(data)
+ const sumTransactions = sum(data)
+
+ function sortedData(data){
+   const allShares = data.map((transaction)=> {
+     return transaction.shares
+   })
+   return allShares.sort((a,b) => a-b)
+ }
+
+ function sum(data) {
+  const allAmounts = data.map((transaction)=> {
+    return transaction.shares
+  })
+  let total = 0
+  for (let i=0; i< allAmounts.length; i++) {
+    total += parseInt(allAmounts[i])
+  }
+  return total
+}
 
   const mappedData = data.map((transaction) => (
     <li>Delegator address: {transaction.delegator_address} has {transaction.shares} shares</li>
+  ))
+
+  const mappedSortedData = sortedTransactions.map((transaction)=> (
+    <li>{transaction}</li>
   ))
  
 
   return (
     <div className="App">
       <button onClick={handleClick}>Hello</button>
-      <div>There are {totalTransactions} transactions</div>
+      <div>There are {totalTransactions} total transactions</div>
       <div>The median transaction is the index {medianTransaction}</div>
-      <div>{mappedData}</div>
+      <div>The median value is {mappedSortedData[medianTransaction]}</div>
+      <div>The sum of all transactions is {sumTransactions}</div>
+      {/* <div>Sorted Transactions: {mappedSortedData}</div> */}
+      {/* <div>{mappedData}</div> */}
     </div>
   );
 }
