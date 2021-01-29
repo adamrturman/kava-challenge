@@ -74,6 +74,8 @@ function App() {
 
   return (
     <div className={styles.App}>
+      {showData ?
+      null :
       <div className="col-sm-10 col-md-6 mx-auto mt-5">
         <Card className={styles.info}>
           <Card.Body>
@@ -82,6 +84,7 @@ function App() {
           </Card.Body>
         </Card>
       </div>
+      } 
       {showData ?
         <div>
           <div className="col-sm-10 col-md-6 mx-auto mt-5">
@@ -92,6 +95,7 @@ function App() {
                 <div>The median value is <span>{mappedSortedData[medianTransaction]}</span> </div>
                 <div>The average value of all transactions is <span>{averageTransaction}</span></div>
                 <div>The maximum transaction value is <span>{largestTransaction}</span><br /> and was made by <span>{maxInvestor}</span></div>
+                <Button className={styles.button} onClick={() => setShowData(false)}>Return to Homepage</Button>
               </Card.Body>
             </Card>
           </div>

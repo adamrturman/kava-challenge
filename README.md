@@ -10,7 +10,7 @@ KAVA tokens can be 'staked', which means that they are bonded to a particular va
 }`
 
 The complete state of the kava blockchain, as JSON, can be found at: 
-[Link](https://ipfs.io/ipfs/QmbZiEejjAmdEmtF71WLPuY3dwkeMPCmcVxaj7N8aH56Zw/kava-4-export-202101 22.json)
+[Link](https://ipfs.io/ipfs/QmbZiEejjAmdEmtF71WLPuY3dwkeMPCmcVxaj7N8aH56Zw/kava-4-export-20210122.json)
 
 ## Goals
 
@@ -33,6 +33,15 @@ The complete state of the kava blockchain, as JSON, can be found at:
 - CSS3
 - Bootstrap
 - React-Chart.js 2
+
+## Screenshots
+
+#### Landing Page
+![Homepage](https://user-images.githubusercontent.com/67024033/106222896-09188780-61a6-11eb-8f9c-8c4b3591b5c5.png)
+
+#### Data
+![Data](https://user-images.githubusercontent.com/67024033/106222974-32391800-61a6-11eb-9389-00b7228babc4.png)
+
 
 ## Future Improvements
 - Refactor methods into service file
