@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/kava-challenge/static/css/main.eda95d71.chunk.css",
+    "main.js": "/kava-challenge/static/js/main.b8dd1b86.chunk.js",
+    "main.js.map": "/kava-challenge/static/js/main.b8dd1b86.chunk.js.map",
+    "runtime-main.js": "/kava-challenge/static/js/runtime-main.f4eefc85.js",
+    "runtime-main.js.map": "/kava-challenge/static/js/runtime-main.f4eefc85.js.map",
+    "static/css/2.150d169a.chunk.css": "/kava-challenge/static/css/2.150d169a.chunk.css",
+    "static/js/2.eb52608b.chunk.js": "/kava-challenge/static/js/2.eb52608b.chunk.js",
+    "static/js/2.eb52608b.chunk.js.map": "/kava-challenge/static/js/2.eb52608b.chunk.js.map",
+    "static/js/3.852632fb.chunk.js": "/kava-challenge/static/js/3.852632fb.chunk.js",
+    "static/js/3.852632fb.chunk.js.map": "/kava-challenge/static/js/3.852632fb.chunk.js.map",
+    "index.html": "/kava-challenge/index.html",
+    "static/css/2.150d169a.chunk.css.map": "/kava-challenge/static/css/2.150d169a.chunk.css.map",
+    "static/css/main.eda95d71.chunk.css.map": "/kava-challenge/static/css/main.eda95d71.chunk.css.map",
+    "static/js/2.eb52608b.chunk.js.LICENSE.txt": "/kava-challenge/static/js/2.eb52608b.chunk.js.LICENSE.txt",
+    "static/media/Kava-logo.9e44df28.svg": "/kava-challenge/static/media/Kava-logo.9e44df28.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f4eefc85.js",
+    "static/css/2.150d169a.chunk.css",
+    "static/js/2.eb52608b.chunk.js",
+    "static/css/main.eda95d71.chunk.css",
+    "static/js/main.b8dd1b86.chunk.js"
+  ]
+}
