@@ -1,6 +1,6 @@
 import React from "react";
+import styles from '../App.module.css';
 import { Line } from "react-chartjs-2";
-
 
 export default function MyChart(props) {
     const data = {
@@ -16,7 +16,7 @@ export default function MyChart(props) {
         ]
     };
     return (
-        <div className="App">
+        <div className={styles.chart}>
             <Line data={data} />
         </div>
     );
