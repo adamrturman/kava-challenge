@@ -1,0 +1,14 @@
+
+.button {
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.info {
+    margin-bottom: 5rem;
+}
+
+span {
+    font-weight: bold;
+    text-decoration:underline
+}

@@ -1,14 +1,10 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import styles from '../App.module.css';
+import styles from './Landing.module.css';
 import logo from '../img/Kava-logo.svg'
 
-
-
 function Landing(props) {
-    console.log("Landing props", props)
-
     return (
         <div>
             {props.showData ?
@@ -17,7 +13,7 @@ function Landing(props) {
                     <Card className={styles.info}>
                         <Card.Body>
                             <h1 className={styles.heading}><img src={logo} alt="logo" /></h1>
-                            <Button className={styles.button} onClick={props.displayData}>Render Data</Button>
+                            <Button className={styles.button} onClick={props.display}>Render Data</Button>
                         </Card.Body>
                     </Card>
                 </div>
