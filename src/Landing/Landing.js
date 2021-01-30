@@ -6,20 +6,15 @@ import logo from '../img/Kava-logo.svg'
 
 function Landing(props) {
     return (
-        <div>
-            {props.showData ?
-                null :
-                <div className="col-sm-10 col-md-6 mx-auto mt-5">
-                    <Card className={styles.info}>
-                        <Card.Body>
-                            <h1 className={styles.heading}><img src={logo} alt="logo" /></h1>
-                            <Button className={styles.button} onClick={props.display}>Render Data</Button>
-                        </Card.Body>
-                    </Card>
-                </div>
-            }
+        <div className="col-sm-10 col-md-6 mx-auto mt-5">
+            <Card className={styles.info}>
+                <Card.Body>
+                    <h1 className={styles.heading}><img src={logo} alt="logo" /></h1>
+                    <Button className={styles.button} onClick={props.display}>Render Data</Button>
+                </Card.Body>
+            </Card>
         </div>
-    )
+    );
 }
 
-export default Landing
+export default Landing;
