@@ -10,13 +10,13 @@ function MaxTransaction(props) {
 
         return Math.max(...allShares);
     }
-
+    
     function findInvestor(data, amount) {
-        for (let i = 0; i < data.length; i++) {
-            if (parseInt(data[i].shares) === amount) {
-                return data[i].delegator_address
+        data.forEach(transaction => {
+            if (parseInt(transaction.shares) === amount){
+                return transaction.delegator_address;
             }
-        }
+        })
     }
 
     const largestTransaction = maxTransaction(data);

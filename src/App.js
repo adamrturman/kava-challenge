@@ -1,9 +1,9 @@
 import styles from './App.module.css';
-import { fetchData } from './services/dataService';
+import { fetchData } from './service/dataService';
 import React, { useState } from 'react';
-import Landing from './Landing/Landing';
-import Data from './Data/Data';
-import LoadingSpinner from './LoadingSpinner/LoadingSpinner';
+import Landing from './components/Landing/Landing';
+import Data from './components/Data/Data';
+import LoadingSpinner from './components/LoadingSpinner/LoadingSpinner';
 
 function App() {
   const [data, setData] = useState([]);
