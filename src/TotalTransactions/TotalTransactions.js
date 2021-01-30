@@ -13,4 +13,4 @@ function TotalTransactions (props) {
     )
 }
 
-export default TotalTransactions
+export default TotalTransactions;

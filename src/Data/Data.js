@@ -1,5 +1,7 @@
 import React from 'react'
 import TotalTransactions from '../TotalTransactions/TotalTransactions'
+import Median from '../Median/Median'
+import Average from '../Average/Average'
 import Chart from '../Chart/Chart'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -73,8 +75,8 @@ function Data(props) {
                     <Card.Header>Data</Card.Header>
                     <Card.Body>
                         <TotalTransactions data={data}/>
-                        <div>There are <span>{totalTransactions}</span> total transactions</div>
-                        <div>The median value is <span>{mappedSortedData[medianTransaction]}</span> </div>
+                        <Median data={data} />
+                        <Average data={data} />
                         <div>The average value of all transactions is <span>{averageTransaction}</span></div>
                         <div>The maximum transaction value is <span>{largestTransaction}</span><br /> and was made by <span>{maxInvestor}</span></div>
                         <Button className={styles.button} onClick={() => setShowData(false)}>Return to Homepage</Button>
