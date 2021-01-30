@@ -2,6 +2,7 @@ import React from 'react'
 import TotalTransactions from '../TotalTransactions/TotalTransactions'
 import Median from '../Median/Median'
 import Average from '../Average/Average'
+import MaxTransaction from '../MaxTransaction/MaxTransaction'
 import Chart from '../Chart/Chart'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
@@ -77,7 +78,7 @@ function Data(props) {
                         <TotalTransactions data={data}/>
                         <Median data={data} />
                         <Average data={data} />
-                        <div>The average value of all transactions is <span>{averageTransaction}</span></div>
+                        <MaxTransaction data={data} />
                         <div>The maximum transaction value is <span>{largestTransaction}</span><br /> and was made by <span>{maxInvestor}</span></div>
                         <Button className={styles.button} onClick={() => setShowData(false)}>Return to Homepage</Button>
                     </Card.Body>
