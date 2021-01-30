@@ -47,7 +47,7 @@ function Data(props) {
 
     function sum(data) {
         let total = 0
-        const allAmounts = data.forEach((transaction) => {
+        data.forEach((transaction) => {
             total += parseInt(transaction.shares)
         })
         return total
