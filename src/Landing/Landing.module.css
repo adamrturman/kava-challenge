@@ -10,3 +10,8 @@
 .info {
     margin-bottom: 5rem;
 }
+
+img {
+    max-height: 5rem;
+}
+  
