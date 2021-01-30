@@ -1,5 +1,6 @@
 import styles from './App.module.css';
 import React, { useState } from 'react'
+import Landing from './Landing/Landing'
 import MyChart from './Chart/Chart'
 import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
@@ -74,7 +75,8 @@ function App() {
 
   return (
     <div className={styles.App}>
-      {showData ?
+      <Landing display={displayData} showData={showData}/>
+      {/* {showData ?
       null :
       <div className="col-sm-10 col-md-6 mx-auto mt-5">
         <Card className={styles.info}>
@@ -84,7 +86,7 @@ function App() {
           </Card.Body>
         </Card>
       </div>
-      } 
+      }  */}
       {showData ?
         <div>
           <div className="col-sm-10 col-md-6 mx-auto mt-5">
